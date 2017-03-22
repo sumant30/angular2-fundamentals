@@ -28,6 +28,7 @@ export class EventThumbnailComponent  {
    
  @Input()  event:any;
  
+ someProperty:any = 'Any value';
 
  handleClickMe(){
         console.log('foo');
