@@ -8,7 +8,8 @@ import {Component }from '@angular/core';
     <h1>Upcoming Angular Events</h1>
     </div>
     <hr/>
-    <event-thumbnail [event]="event1" (eventClick)="handleEventClicked($event)"></event-thumbnail>
+    <event-thumbnail [event]="event1" #thumbnail ></event-thumbnail>
+    <button class="btn btn-primary" (click)="thumbnail.handleClickMe()">Click Me!</button>
     `
 })
 
@@ -28,8 +29,6 @@ export class EventListcomponent {
             }
         }; 
 
-        handleEventClicked(data){
-            console.log('Event Name:' + data);
-        }
+        
 }
 
