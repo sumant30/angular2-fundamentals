@@ -33,6 +33,10 @@ import { Component,Input,Output,EventEmitter } from '@angular/core';
         {
             color:#bbb;
         }
+        .thumbnail 
+        {
+            min-height:210px;
+        }
         `
     ]
 })
