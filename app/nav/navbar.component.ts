@@ -23,6 +23,11 @@ import {Component }from '@angular/core';
                 display:none;
             }
         }
+
+        li > .active
+        {
+            color:#F97924;
+        }
         `
     ]
 })
