@@ -17,7 +17,6 @@ import {ActivatedRoute} from '@angular/router';
       </div>     
     </div>
     
-    
     `
 })
 
