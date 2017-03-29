@@ -37,15 +37,15 @@ export class EventListcomponent implements OnInit {
       //this.events = this._eventService.getEvents();
       
       //Commented out as the data is going to be present on route
-      //  this._eventService.getEvents().subscribe(
-      //    events=>
-      //    {
-      //      this.events = events
-      //    });
+        this._eventService.getEvents().subscribe(
+          events=>
+          {
+            this.events = events
+          });
 
       //Get the data from route
       //console.log(this._route.snapshot.data);
-      this.events = this._route.snapshot.data['events'];  
+      // this.events = this._route.snapshot.data['events'];  
     }
     
     handleThumbnailClick(eventName){

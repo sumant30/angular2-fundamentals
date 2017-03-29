@@ -2,14 +2,14 @@ import {NgModule }from '@angular/core';
 import {BrowserModule }from '@angular/platform-browser'; 
 import {RouterModule}from '@angular/router'; 
 import {
-    CreateEventComponent,
-    EventDetailsComponent,
-    EventListResolverService,
-    EventListcomponent,
-    EventRouteActivatorService,
-    EventService,
+    CreateEventComponent, 
+    EventDetailsComponent, 
+    EventListResolverService, 
+    EventListcomponent, 
+    EventRouteActivatorService, 
+    EventService, 
     EventThumbnailComponent
-} from './events/index';
+}from './events/index'; 
 import {EventsAppComponent }from './event-app.component'; 
 // import {EventListcomponent }from './events/events-list.component'; 
 // import {EventThumbnailComponent }from './events/event-thumbnail.component'; 
@@ -40,9 +40,8 @@ import {Error404Component}from './errors/404.component';
     [
         EventService, 
         ToastrService, 
-        EventRouteActivatorService,  
-        EventListResolverService,
-        {
+        EventRouteActivatorService, 
+        EventListResolverService,  {
             provide:'canDeactivateCreateEvent', 
             useValue:checkDirtyState
         }
