@@ -1,6 +1,6 @@
 import {Injectable }from '@angular/core'; 
 import {Subject,Observable}from 'rxjs/RX'; 
-import {IEvent,ISessions}  from'./event.model'
+import {IEvent,ISession} from './event.model';
 
 @Injectable()
 export class EventService {
@@ -19,7 +19,7 @@ export class EventService {
 const EVENTS:IEvent[] = [ {
       id:1, 
       name:'Angular Connect', 
-      date: new Date('9/26/2036'), 
+      date:new Date('9/26/2036'), 
       time:'10:00 am', 
       price:599.99, 
       imageUrl:'/app/assets/images/angularconnect-shield.png', 
@@ -277,7 +277,7 @@ const EVENTS:IEvent[] = [ {
     },  {
       id:5, 
       name:'ng-vegas', 
-      date: new Date('2/10/2037'), 
+      date:new Date('2/10/2037'), 
       time:'9:00 am', 
       price:400.00, 
       imageUrl:'/app/assets/images/ng-vegas.png', 
