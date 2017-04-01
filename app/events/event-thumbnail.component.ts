@@ -5,9 +5,9 @@ import { Component,Input,Output,EventEmitter } from '@angular/core';
     template:
     `
     <div [routerLink]="['/events',event.id]" class="well hoverwell thumbnail">
-    <h2>{{event?.name}}</h2>
+    <h2>{{event?.name | uppercase}}</h2>
     <div>
-        Date : {{event?.date}}
+        Date : {{event?.date | date:'shortDate'}}
     </div>
     <div [ngClass]="getStartTimeClass()" [ngSwitch]="event?.time">
         Time : {{event?.time}}
@@ -23,7 +23,7 @@ import { Component,Input,Output,EventEmitter } from '@angular/core';
     </div>
     
     <div>
-        Price : \${{event?.price}}
+        Price : {{event?.price | currency:'USD':true}}
     </div>
     <div *ngIf="event?.location">
         <span>Location : {{event?.location?.address}}</span>
