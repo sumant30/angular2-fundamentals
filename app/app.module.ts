@@ -11,7 +11,8 @@ import {
         EventService, 
         EventThumbnailComponent, 
         CreateSessionComponent,
-        SessionListComponent
+        SessionListComponent,
+        DurationPipe
 }from './events/index'; 
 import {EventsAppComponent }from './event-app.component'; 
 // import {EventListcomponent }from './events/events-list.component'; 
@@ -40,7 +41,8 @@ declarations:
     Error404Component, 
     CreateSessionComponent,
     SessionListComponent,
-    CollapsibleWellComponent 
+    CollapsibleWellComponent,
+    DurationPipe
     ], 
 
 imports:[ BrowserModule, RouterModule.forRoot(appRoutes), FormsModule, ReactiveFormsModule], 
