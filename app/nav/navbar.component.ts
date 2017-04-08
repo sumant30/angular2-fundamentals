@@ -1,25 +1,27 @@
-import { Component } from '@angular/core';
-import { AuthService } from '../user/auth.service';
+import {Component }from '@angular/core';
+import {AuthService }from '../user/auth.service';
+import {ISession}from '../events/shared/event.model';
+import {EventService}from '../events/shared/event.service';
 
-@Component({
-    selector: 'nav-bar',
-    templateUrl: 'app/nav/navbar.component.html',
-    styles:
-    [
+@Component( {
+selector:'nav-bar',
+templateUrl:'app/nav/navbar.component.html',
+styles:
+[
         `
-        .nav.navbar-nav 
+        .nav.navbar-nav
         {
-            font-size:15px;
+        font - size:15px;
         }
 
-        #searchForm 
+        #searchForm
         {
-            margin-right:100px;
+        margin - right:100px;
         }
 
         @media (maxWidth:1200px)
         {
-            #searchForm 
+            #searchForm
             {
                 display:none;
             }
@@ -27,14 +29,26 @@ import { AuthService } from '../user/auth.service';
 
         li > .active
         {
-            color:#F97924;
+        color:#F97924;
         }
-        `
+`
     ]
 })
 export class NavbarComponent {
 
-    constructor(private _authService:AuthService) { 
-        //console.log(_authService.currentUser!=null ?_authService.currentUser.firstName:'No User');
+    searchTerm:string = '';
+    foundSessions:ISession[];
+
+    constructor(private _authService:AuthService, private _eventService:EventService) {
+    //console.log(_authService.currentUser!=null ?_authService.currentUser.firstName:'No User');
     }
+
+    searchSessions(searchTerm) {
+     this._eventService.searchSessions(searchTerm).subscribe
+         (x =>  {
+             this.foundSessions = x;
+             console.log(this.foundSessions);
+         });
+    }
+
 }
