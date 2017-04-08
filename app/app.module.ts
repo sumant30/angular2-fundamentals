@@ -3,23 +3,24 @@ import {BrowserModule }from '@angular/platform-browser';
 import {RouterModule}from '@angular/router';
 import {FormsModule, ReactiveFormsModule}from '@angular/forms';
 import {
-         CreateEventComponent,
-         EventDetailsComponent,
-         EventListResolverService,
-         EventListcomponent,
-         EventRouteActivatorService,
-         EventService,
-         EventThumbnailComponent,
-         CreateSessionComponent,
-         SessionListComponent,
-         DurationPipe
+CreateEventComponent,
+EventDetailsComponent,
+EventListResolverService,
+EventListcomponent,
+EventRouteActivatorService,
+EventService,
+EventThumbnailComponent,
+CreateSessionComponent,
+SessionListComponent,
+DurationPipe
 }from './events/index';
 import {EventsAppComponent }from './event-app.component';
 import {NavbarComponent}from './nav/navbar.component';
 import {appRoutes}from './route';
 import {Error404Component}from './errors/404.component';
 import {AuthService}from './user/auth.service';
-import {TOASTR_TOKEN, Toastr,JQ_TOKEN,CollapsibleWellComponent,SimpleModalComponent} from './common/index';
+import {
+TOASTR_TOKEN, Toastr, JQ_TOKEN, CollapsibleWellComponent, SimpleModalComponent, ModalTriggerDirective}from './common/index';
 
 // import {EventListcomponent }from './events/events-list.component';
 // import {EventThumbnailComponent }from './events/event-thumbnail.component';
@@ -39,39 +40,37 @@ declare let jQuery:Object;
 @NgModule( {
 declarations:
 [
-  EventsAppComponent,
-  EventListcomponent,
-  EventThumbnailComponent,
-  NavbarComponent,
-  EventDetailsComponent,
-  CreateEventComponent,
-  Error404Component,
-  CreateSessionComponent,
-  SessionListComponent,
-  CollapsibleWellComponent,
-  DurationPipe,
-  SimpleModalComponent
+    EventsAppComponent,
+EventListcomponent,
+EventThumbnailComponent,
+NavbarComponent,
+EventDetailsComponent,
+CreateEventComponent,
+Error404Component,
+CreateSessionComponent,
+SessionListComponent,
+CollapsibleWellComponent,
+DurationPipe,
+SimpleModalComponent,
+ModalTriggerDirective
 ],
 
 imports:
 [
-  BrowserModule,
-  RouterModule.forRoot(appRoutes),
-  FormsModule,
-  ReactiveFormsModule
-],
+    BrowserModule,
+RouterModule.forRoot(appRoutes),
+FormsModule,
+ReactiveFormsModule
+    ],
 providers:
 [
-  EventService,
-  {provide:TOASTR_TOKEN, useValue:toastr},
-  {provide:JQ_TOKEN, useValue:jQuery},
-  EventRouteActivatorService,
-  EventListResolverService,
-  {
-    provide:'canDeactivateCreateEvent',
-    useValue:checkDirtyState
-  },
-  AuthService
+    EventService,  {provide:TOASTR_TOKEN, useValue:toastr},  {provide:JQ_TOKEN, useValue:jQuery},
+EventRouteActivatorService,
+EventListResolverService,  {
+provide:'canDeactivateCreateEvent',
+useValue:checkDirtyState
+    },
+AuthService
 ],
 bootstrap:[ EventsAppComponent ]
 })
