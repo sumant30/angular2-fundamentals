@@ -37,11 +37,16 @@ export class SimpleModalComponent {
   @Input() title: string;
   @Input() elementId: string;
   @ViewChild('modalContainer') el: ElementRef;
+  @Input() closeOnBodyClick: string;
 
   constructor(@Inject(JQ_TOKEN) private $: any) {}
 
   closeModal() {
-         this.$(this.el.nativeElement).modal('hide');
+    //console.log(this.closeOnBodyClick);
+    if (this.closeOnBodyClick.toLocaleLowerCase() === 'true') {
+      this.$(this.el.nativeElement).modal('hide');
+    }
+
   }
 
 }
